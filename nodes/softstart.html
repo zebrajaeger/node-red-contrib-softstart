@@ -1,0 +1,47 @@
+<script type="text/javascript">
+    RED.nodes.registerType('softstart', {
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            name: { value: "" },
+            startPower: { value: 0, required: true, validate: RED.validators.number() }, // New start power config
+            // targetPower: { value: 100, required: true, validate: RED.validators.number() },
+            duration: { value: 5000, required: true, validate: RED.validators.number() },
+            stepTime: { value: 100, required: true, validate: RED.validators.number() },
+            mode: { value: "exponential" }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: "snail.png",
+        label: function() {
+            return this.name || "Softstart";
+        }
+    });
+</script>
+
+
+<script type="text/x-red" data-template-name="softstart">
+<div class="form-row">
+    <label for="node-input-startPower"><i class="fa fa-bolt"></i> Start Value</label>
+    <input type="number" id="node-input-startPower" placeholder="0">
+</div>
+<div class="form-row">
+    <label for="node-input-duration"><i class="fa fa-tachometer"></i> Duration (ms)</label>
+    <input type="number" id="node-input-duration" placeholder="5000">
+</div>
+<div class="form-row">
+    <label for="node-input-stepTime"><i class="fa fa-clock-o"></i> Step Time (ms)</label>
+    <input type="number" id="node-input-stepTime" placeholder="100">
+</div>
+<div class="form-row">
+    <label for="node-input-mode"><i class="fa fa-line-chart"></i> Mode</label>
+    <select id="node-input-mode">
+        <option value="exponential">Exponential</option>
+        <option value="linear">Linear</option>
+    </select>
+</div>
+</script>
+
+<script type="text/x-red" data-help-name="softstart">
+    <p>Coverts a (ADC) value to a temperature in Celsius</p>
+</script>

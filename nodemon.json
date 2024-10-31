@@ -1,0 +1,11 @@
+{
+    "watch": [
+        "nodes",
+        "settings.js"
+    ],
+    "ext": "js,json,html",
+    "exec": "node-red -u .",
+    "ignore": [
+        "**/node_modules/**"
+    ]
+}

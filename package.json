@@ -1,0 +1,40 @@
+{
+  "name": "@zebrajaeger/node-red-contrib-softstart",
+  "version": "1.0.0",
+  "description": "Linear or exponential softstart",
+  "keywords": [
+    "node-red",
+    "node-red-node",
+    "custom-node",
+    "softstart"
+  ],
+  "node-red": {
+    "version": ">=2.0.0",
+    "nodes": {
+      "NTC": "nodes/softstart.js"
+    }
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zebrajaeger/node-red-contrib-softstart.git"
+  },
+  "author": "Lars Brandt",
+  "license": "MIT",
+  "scripts": {
+    "start": "node-red",
+    "dev": "nodemon"
+  },
+  "devDependencies": {
+    "node-red": "^4.0.2",
+    "nodemon": "^3.1.4"
+  },
+  "files": [
+    "nodes/",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ]
+}
